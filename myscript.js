@@ -1,46 +1,46 @@
 /* alert("Hello World!"); */
 var table = [
  [
-	[0,1,2],
+	[0,1,2], //t1
 	[2,0,1],
 	[1,2,0],
 ],
 /*
 [
-	[]
+	[]		//t2
 	[]
 	[]
 ],
 */
 [
-	[0,1,1],
+	[0,1,1],	//tp1
 	[3,0,2],
 	[1,2,0],
  ],
 [
-	[0,1,2],
+	[0,1,2],	//tp2
 	[1,0,1],
 	[1,3,0],
  ],
 [
-	[0,2,3],
+	[0,2,3],	//tp3
 	[2,0,1],
 	[1,1,0],
  ],
 [
 	[[0,0],[1,2],[3,0],[4,1]], //pozn 3.
 	[[3,1],[0,0],[1,2],[3,0]], //modifikovaná
-	[[2,0],[3,1],[0,0],[1,2]], //pozn. 1.
-	[[1,2],[2,0],[4,1],[0,0]], //pozn. 3.
+	[[3,0],[3,1],[0,0],[1,2]], //pozn. 1.
+	[[1,2],[3,0],[4,1],[0,0]], //pozn. 3.
 ],
 [
-	[0,3,4,4],
+	[0,3,4,4],		//xpp+
 	[3,0,2,3],
 	[2,2,0,1],
 	[1,1,1,0],
 ],
 /*
-[
+[					//xpp2
 	[,,,],
 	[,,,],
 	[,,,],
@@ -48,25 +48,25 @@ var table = [
 ],
 */
 [
-	[0,1,2,2],
+	[0,1,2,2],		//xp1
 	[1,0,1,1],
 	[4,4,0,3],
-	[2,3,3,0],
+	[2,3,3,0],	
 ],
 [
-	[0,1,1,1],
+	[0,1,1,1],		//xp2
 	[4,0,3,4],
 	[3,3,0,2],
 	[1,2,2,0],
 ],
 [
-	[0,3,4,4],
+	[0,3,4,4],		//xp3
 	[3,0,2,3],
 	[2,2,0,1],
 	[1,1,1,0],
 ],
 [
-	[0,2,3,3],
+	[0,2,3,3],		//xp4
 	[2,0,1,2],
 	[1,1,0,1],
 	[3,4,4,0],
@@ -74,37 +74,35 @@ var table = [
 ]
 
 function Tjunction(){
-alert("křižovatka typu T");		// pravděpodobně zde budou další 
+alert("křižovatka typu X");		// pravděpodobně zde budou další 
 	var a =Math.floor(Math.random() * 4);	//kam auto pojede 
 	var b =Math.floor(Math.random() * 4);
 	var c =Math.floor(Math.random() * 4);
 	var d =Math.floor(Math.random() * 4);
-	var typ =Math.floor(math.random() * )
-	var A = x0[][0][a][0];						//kolikátý pojede
-	var B = x0[][1][b][0];
-	var C = x0[][2][c][0];
-	var D = x0[][3][d][0];
+	var typ =Math.floor(math.random() * 4);
+	var A = x0[typ][0][a][0];						//kolikátý pojede
+	var B = x0[typ][1][b][0];
+	var C = x0[typ][2][c][0];
+	var D = x0[typ][3][d][0];
 	console.log(a, b, c, d);
 	console.log(A, B, C, D);
 	sortX();
 }
 
 function Xjunction(){
-alert("křižovatka typu X");		// pravděpodobně zde budou další 
+alert("křižovatka typu T");		// pravděpodobně zde budou další 
 	var a =Math.floor(Math.random() * 4);	//kam auto pojede 
 	var b =Math.floor(Math.random() * 4);
 	var c =Math.floor(Math.random() * 4);
-	var x = 0;
-	var y = 0;
-	var z = 0;
-	var A = table[x][0][a][0];						//kolikátý pojede
-	var B = table[y][1][b][0];
-	var C = table[z][2][c][0];
-	console.log(a, b, c, d);
-	console.log(A, B, C, D);
-	sortX();
+	var typ = Math.floor(Math.random() * 7) + 4;
+	var A = table[typ][0][a][0];						//kolikátý pojede
+	var B = table[typ][1][b][0];
+	var C = table[typ][2][c][0];
+	//console.log(a, b, c, d);
+	//console.log(A, B, C, D);
+	sortT();
 }
-}
+
 
 
 
@@ -198,9 +196,9 @@ var xpp2 = [
 	[13,14,15,16],
 ]
 */
-
+/*
 function XjunctionFree(){				//funkce pro jednotlivé křižovatky
-  alert("křižovatka typu T");		// pravděpodobně zde budou další 
+  alert("křižovatka typu X");		// pravděpodobně zde budou další 
 	var a =Math.floor(Math.random() * 4);	//kam auto pojede 
 	var b =Math.floor(Math.random() * 4);
 	var c =Math.floor(Math.random() * 4);
@@ -264,7 +262,7 @@ console.log(sortable);
 
 var qwe = [sortable[0][0][0], sortable[1][0][0], sortable[2][0][0],sortable[3][0][0]];
 console.log(qwe);
-// Qtype();
+Qtype();
 }
   
 function Qtype(){
@@ -280,7 +278,7 @@ function drawX(A, B, C, D){
 
 
 }
-
+/*
 function TjunctionFree(){
   alert("Křižovatka typu T");
 	var Tfree = 0;
@@ -325,6 +323,7 @@ function TjunctionFree3(){
 	var C = t3[2][c];
 	sortT();
 }
+*/
 function sortT(){
 var maxSpeed = {
     a: A, 
@@ -346,7 +345,7 @@ var qwe = [sortable[0][0][0], sortable[1][0][0], sortable[2][0][0]];
 console.log(qwe);
 // Qtype();
 }
-
+/*
 function TjunctionPreference(){
   alert("Křižovatka typu T s upravenou předností v jízdě"); 
 	 var TPref = 0;
@@ -388,7 +387,7 @@ var a =Math.floor(Math.random() * 3);
 	var C = t3[2][c];
 	sortT();
 }
-
+*/
 function roundabout(){
 	alert("Křižovatka typu T z boku druhého");
 }
@@ -425,7 +424,7 @@ switch(choice){
     XjunctionFree();
     break;
   case 2:
-    XjunctionPreference();
+    Xjunction();
     break;	
   case 3:
     TjunctionFree();
@@ -447,7 +446,6 @@ switch(choice){
 	break;
 }
 }
-
 
 /*
  var xp3 = [
